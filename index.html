@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="热爱生活，热爱工作">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BlackLight">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="BlackLight">
+<meta property="og:description" content="热爱生活，热爱工作">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="hsong">
+<meta property="article:tag" content="科技，人">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>BlackLight</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">BlackLight</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Life, Work, Love</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/16/ks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hsong">
+      <meta itemprop="description" content="热爱生活，热爱工作">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BlackLight">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/16/ks/" class="post-title-link" itemprop="url">ks</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-16 16:43:54" itemprop="dateCreated datePublished" datetime="2020-09-16T16:43:54+08:00">2020-09-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-17 11:33:05" itemprop="dateModified" datetime="2020-09-17T11:33:05+08:00">2020-09-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/diary/" itemprop="url" rel="index"><span itemprop="name">diary</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="关于ks"><a href="#关于ks" class="headerlink" title="关于ks"></a>关于ks</h2><p>ks，是kick start的缩写，万事开头难嘛，花了两个小时的时间，学习了一下hexo的配置，把环境搭了一下。</p>
+<p>用ks这个名字作为第一篇的名字，可能和上个月折腾了几天PXE有关系。说来话长。</p>
+<p>我们公司研发人员用的pc都是内部局域网，但是可以远程到一个公用的主机上面查询资料，下载文件等。突然有一天，我们发布的软件版本被扫描出来有病毒，不知道哪位同学不小心把自己的pc搞中毒了。于是我们打算让大家统一扫描一下，网上查询比较好的办法，就是用360系统急救箱的pe版来全盘查杀。其实蛮简单的，随便一个winpe引导，拷贝360的superkiller（360系统急救箱）扫描就好了。但是，我们研发部门的主机都是装在一个物理隔离的铁箱子里面（安全考虑），用USB的话，需要几十台电脑挨个打开箱子，想想就烦。于是，就有了在公司的局域网里搭建PXE服务器的需求。</p>
+<p>搭建完PXE服务之后，干脆又把我们常用的CentOS的安装盘都挂了上去，在设备或者服务器上省得用光驱或者U盘安装系统了。后来觉得，干脆再继续偷懒，写了几个ks.cfg配了上去。</p>
+<p>所以你看，我用的ks，其实是redhat自动化安装时候用的这个文件的名字。</p>
+<h2 id="为什么现在"><a href="#为什么现在" class="headerlink" title="为什么现在"></a>为什么现在</h2><p>09年毕业至今，多亏了神奇的G家<strong>搜索引擎</strong>和广大网友的智慧，解决了我很多工作里面遇到的难题，也积累了不少解决问题的经验和技巧。</p>
+<p>工作之初的两三年，遇到什么棘手的问题，解决完了之后，除了脑子里的印象之外，其他什么都没留下。后来慢慢地发现，自己在公司里搭的用来做bug管理的redmine，可以用wiki来做知识库，搜索也方便。后来换了工作之后，发现自己以前记录过的问题，之后还是有可能遇到，而且也容易忘记具体的解决方案，好多时候又要重新搜索一遍。刚好那时候云笔记开始慢慢流行，我自己调研了一番，忘记出于什么原因选择了wiz（为知笔记）。再后来，wiz开始收费了，加上我自己用着体验也不怎么好，于是迁移（人工复制粘贴，汗）到了印象笔记，不过印象笔记的免费版对同时登录的设备有限制，交了钱之后多设备随时登录，体验还是蛮好的。</p>
+<p>慢慢养成了在工作里把一些技术问题记录到印象笔记里面的习惯之后，有一种无法对别人诉说的幸福感，哈哈。</p>
+<p>但是，每次遇到复杂问题，尤其是那种搜索引擎也很难搞定的一类，自己找资料，做实验，读文档，花一番力气解决之后，每次都有想分享到网上的冲动，想着自己每次都是搜别人的解决方案，总想回馈点什么，每次都会因为不同的原因放弃，例如整理一番会觉得花时间，或者不知道该写在哪儿，云云。这种情况发生的多了，总还是有点内疚。</p>
+<p>从毕业开始，我接触的大多是和网络数据处理相关的工作内容，不可避免地要和大数据相关的系统打交道，概念上懂，但是没有实际操作经验，随着工作里涉及的大数据的产品与方案越来越多，我计划自己学习一下，于是决定从搭建Hadoop的集群环境开始。</p>
+<p>我感觉使用Ambari+hdp或Cloudera Manger+CDH版本的Hadoop来搭建环境，应该会让我失去不少细节的学习机会，于是决定自己手工尝试一下。选版本参考的是CDH版本的搭配，大部分的组件搭配都没问题，除了hive。用了三个节点，先安装Hadoop，然后是ZooKeeper，接着配置Namenode的HA，然后HBase，接着Hive，然后是Hiveserver2的HA。编程语言方面，我没怎么用过Java，这也是我一直没怎么主动学习Hadoop的主要原因之一。整个搭建过程大概经历了一周。</p>
+<p>在我的这个学习Hadoop集群搭建的过程中，遇到了一些问题，有些通过参考网络资料解决了，但是也有一部分，是通过阅读官方文档加上各种碎片资料，再加上各种猜测和尝试才搞定。</p>
+<p>之前的工作过程中也发生过类似的情况，遇见问题，网络上怎么也找不到现成的类似案例，最后自己看文档，翻源码，做各种实验尝试，最后解决。其实也是很想把一些经验分享给大家的，由于以上提到的，或者其他没提到的偶然因素，都未能实施。</p>
+<p>这次莫名其妙地有很大的想写下来的冲动，于是，就有了现在。</p>
+<h2 id="想写什么"><a href="#想写什么" class="headerlink" title="想写什么"></a>想写什么</h2><h4 id="阅读笔记"><a href="#阅读笔记" class="headerlink" title="阅读笔记"></a>阅读笔记</h4><p>阅读笔记，是我想写很久，却也拖了很久的东西。我所谓的阅读笔记，包括偶尔看到的博客、微博、自媒体等内容，也包括读书笔记。</p>
+<h4 id="技术内容整理"><a href="#技术内容整理" class="headerlink" title="技术内容整理"></a>技术内容整理</h4><p>我在工作过程中发现，有不少小同事仅仅对自己写的部分代码语法与逻辑熟悉，但是对网络基础，计算机基础等了解的比较有限，在解决工作中遇到的问题的时候，能用到手段就会大大收到限制。我计划把自己觉得能帮助到他们的内容整理一下，做个系列分享。</p>
+<h4 id="Trouble-Shooting-备忘"><a href="#Trouble-Shooting-备忘" class="headerlink" title="Trouble Shooting 备忘"></a>Trouble Shooting 备忘</h4><p>记录自己遇到的一些问题的解决方案，希望也能够帮助到其他人。</p>
+<h4 id="创作"><a href="#创作" class="headerlink" title="创作"></a>创作</h4><p>也许和阅读笔记会有重叠。我希望自己能创作出一些有意义的内容。</p>
+<h4 id="好物分享"><a href="#好物分享" class="headerlink" title="好物分享"></a>好物分享</h4><p>运动，书籍，电影，文章，网络资源，软件工具，菜谱，玩具，觉得什么东西好，想分享给大家的。</p>
+<h4 id="待补充"><a href="#待补充" class="headerlink" title="待补充"></a>待补充</h4><p>待补充</p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>人生是一个旅程，我从某一个时期开始认为，学会很好地操控文字，创作也好，记录也罢，能够留下一些什么，这个旅程会更有趣。</p>
+<p>突然怀疑，自己今天突然动手，是不是和听了“一代之治即一代之学”的说法有关系。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">hsong</p>
+  <div class="site-description" itemprop="description">热爱生活，热爱工作</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hsong</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+</body>
+</html>
