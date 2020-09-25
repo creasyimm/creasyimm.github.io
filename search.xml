@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>github访问优化</title>
+    <url>/2020/09/25/ghvo/</url>
+    <content><![CDATA[<p>标签：github，clone，慢，加速，hosts，DNS，CDN</p>
+<h2 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h2><p>github访问速度比较慢，clone代码的时候大部分都是10~20KB/s，而且，还常常断掉，Broken pipe什么的。</p>
+<h2 id="尝试过："><a href="#尝试过：" class="headerlink" title="尝试过："></a>尝试过：</h2><p>用proxy加速，没发现有什么效果。</p>
+<p>今天又搜了一下关键字 <em>github</em> <em>加速</em> ，惊喜地发现效果很赞，早点知道的话一定能够节省好多好多的时间。</p>
+<h2 id="其中一个有效的解决："><a href="#其中一个有效的解决：" class="headerlink" title="其中一个有效的解决："></a>其中一个有效的解决：</h2><p>据说是dns域名污染导致的，在一个工具网站查询几个特定的域名，在主机的hosts文件中指定这几个域名的解析IP地址，再从github clone仓库的时候，速度提升非常明显，我是“哇呜~”叫了一下。</p>
+<p>操作步骤：</p>
+<p>一、打开：<a href="https://www.ipaddress.com/%EF%BC%8C%E5%88%86%E5%88%AB%E6%9F%A5%E8%AF%A2%E4%BB%A5%E4%B8%8B%E5%9F%9F%E5%90%8D%EF%BC%9A">https://www.ipaddress.com/，分别查询以下域名：</a></p>
+<ul>
+<li>github.com</li>
+<li>assets-cdn.github.com</li>
+<li>github.global.ssl.fastly.net</li>
+</ul>
+<p>二、将查询结果<a href="https://www.baidu.com/s?wd=%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6">更新至本地hosts文件</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#不同时间查询，结果可能不同，这里的内容仅供参考</span><br><span class="line">140.82.113.3 github.com</span><br><span class="line">185.199.108.153 assets-cdn.github.com</span><br><span class="line">#185.199.109.153 assets-cdn.github.com</span><br><span class="line">#185.199.110.153 assets-cdn.github.com</span><br><span class="line">#185.199.111.153 assets-cdn.github.com</span><br><span class="line">199.232.69.194 github.global.ssl.fastly.net</span><br></pre></td></tr></table></figure>
+
+<p>参考内容<br>刷新dns缓存的操作参考（一般不需要）：</p>
+<p>Windows</p>
+<blockquote>
+<p>ipconfig /flushdns</p>
+</blockquote>
+<p>Linux</p>
+<blockquote>
+<p>systemctl restart nscd</p>
+</blockquote>
+<p>Mac</p>
+<blockquote>
+<p>sudo dscacheutil -flushcache或sudo killall -HUP mDNSResponder</p>
+</blockquote>
+<p>使用chrome浏览器的注意，chrome本身也有dns缓存，刷新chrome的dns缓存：chrome://net-internals/#dns，点击 <em>Clear host cache</em>，不过我常常发现这个操作也没什么用，关闭chrome重新打开效果比较好。</p>
+<p>参考（之一）：<br><a href="https://github.com/chenxuhua/issues-blog/issues/3">https://github.com/chenxuhua/issues-blog/issues/3</a></p>
+]]></content>
+      <categories>
+        <category>网络</category>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>分享</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ks</title>
     <url>/2020/09/16/ks/</url>
     <content><![CDATA[<h2 id="关于ks"><a href="#关于ks" class="headerlink" title="关于ks"></a>关于ks</h2><p>ks，是kick start的缩写，万事开头难嘛，花了两个小时的时间，学习了一下hexo的配置，把环境搭了一下。</p>
