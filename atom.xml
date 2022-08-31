@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://creasyimm.github.io</id>
+    <title>BlackLight</title>
+    <updated>2022-08-31T07:26:31.333Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://creasyimm.github.io"/>
+    <link rel="self" href="https://creasyimm.github.io/atom.xml"/>
+    <subtitle>热爱生活，热爱工作</subtitle>
+    <logo>https://creasyimm.github.io/images/avatar.png</logo>
+    <icon>https://creasyimm.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, BlackLight</rights>
+    <entry>
+        <title type="html"><![CDATA[github慢]]></title>
+        <id>https://creasyimm.github.io/post/github-man/</id>
+        <link href="https://creasyimm.github.io/post/github-man/">
+        </link>
+        <updated>2020-09-25T04:18:41.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="问题">问题：</h2>
+<p>github访问速度比较慢，clone代码的时候大部分都是10~20KB/s，而且，还常常断掉，Broken pipe什么的。</p>
+<h2 id="尝试过">尝试过：</h2>
+<p>用proxy加速，没发现有什么效果。</p>
+<p>今天又搜了一下关键字 <em>github</em> <em>加速</em> ，惊喜地发现效果很赞，早点知道的话一定能够节省好多好多的时间。</p>
+<h2 id="其中一个有效的解决">其中一个有效的解决：</h2>
+<p>据说是dns域名污染导致的，在一个工具网站查询几个特定的域名，在主机的hosts文件中指定这几个域名的解析IP地址，再从github clone仓库的时候，速度提升非常明显，我是“哇呜~”叫了一下。</p>
+<p>操作步骤：</p>
+<p>一、打开：https://www.ipaddress.com/，分别查询以下域名：</p>
+<ul>
+<li>github.com</li>
+<li>assets-cdn.github.com</li>
+<li>github.global.ssl.fastly.net</li>
+</ul>
+<p>二、将查询结果<a href="https://www.baidu.com/s?wd=%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9hosts%E6%96%87%E4%BB%B6">更新至本地hosts文件</a></p>
+<pre><code>#不同时间查询，结果可能不同，这里的内容仅供参考
+140.82.113.3 github.com
+185.199.108.153 assets-cdn.github.com
+#185.199.109.153 assets-cdn.github.com
+#185.199.110.153 assets-cdn.github.com
+#185.199.111.153 assets-cdn.github.com
+199.232.69.194 github.global.ssl.fastly.net
+</code></pre>
+<p>参考内容<br>
+刷新dns缓存的操作参考（一般不需要）：</p>
+<p>Windows</p>
+<blockquote>
+<p>ipconfig /flushdns</p>
+</blockquote>
+<p>Linux</p>
+<blockquote>
+<p>systemctl restart nscd</p>
+</blockquote>
+<p>Mac</p>
+<blockquote>
+<p>sudo dscacheutil -flushcache或sudo killall -HUP mDNSResponder</p>
+</blockquote>
+<p>使用chrome浏览器的注意，chrome本身也有dns缓存，刷新chrome的dns缓存：chrome://net-internals/#dns，点击 <em>Clear host cache</em>，不过我常常发现这个操作也没什么用，关闭chrome重新打开效果比较好。</p>
+<p>参考（之一）：<br>
+https://github.com/chenxuhua/issues-blog/issues/3</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ks]]></title>
+        <id>https://creasyimm.github.io/post/ks/</id>
+        <link href="https://creasyimm.github.io/post/ks/">
+        </link>
+        <updated>2020-09-16T12:19:33.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="关于ks">关于ks</h2>
+<p>ks，是kick start的缩写，万事开头难嘛，花了两个小时的时间，学习了一下hexo的配置，把环境搭了一下。</p>
+<p>用ks这个名字作为第一篇的名字，可能和上个月折腾了几天PXE有关系。说来话长。</p>
+<p>我们公司研发人员用的pc都是内部局域网，但是可以远程到一个公用的主机上面查询资料，下载文件等。突然有一天，我们发布的软件版本被扫描出来有病毒，不知道哪位同学不小心把自己的pc搞中毒了。于是我们打算让大家统一扫描一下，网上查询比较好的办法，就是用360系统急救箱的pe版来全盘查杀。其实蛮简单的，随便一个winpe引导，拷贝360的superkiller（360系统急救箱）扫描就好了。但是，我们研发部门的主机都是装在一个物理隔离的铁箱子里面（安全考虑），用USB的话，需要几十台电脑挨个打开箱子，想想就烦。于是，就有了在公司的局域网里搭建PXE服务器的需求。</p>
+<p>搭建完PXE服务之后，干脆又把我们常用的CentOS的安装盘都挂了上去，在设备或者服务器上省得用光驱或者U盘安装系统了。后来觉得，干脆再继续偷懒，写了几个ks.cfg配了上去。</p>
+<p>所以你看，我用的ks，其实是redhat自动化安装时候用的这个文件的名字。</p>
+<h2 id="为什么现在">为什么现在</h2>
+<p>09年毕业至今，多亏了神奇的G家<strong>搜索引擎</strong>和广大网友的智慧，解决了我很多工作里面遇到的难题，也积累了不少解决问题的经验和技巧。</p>
+<p>工作之初的两三年，遇到什么棘手的问题，解决完了之后，除了脑子里的印象之外，其他什么都没留下。后来慢慢地发现，自己在公司里搭的用来做bug管理的redmine，可以用wiki来做知识库，搜索也方便。后来换了工作之后，发现自己以前记录过的问题，之后还是有可能遇到，而且也容易忘记具体的解决方案，好多时候又要重新搜索一遍。刚好那时候云笔记开始慢慢流行，我自己调研了一番，忘记出于什么原因选择了wiz（为知笔记）。再后来，wiz开始收费了，加上我自己用着体验也不怎么好，于是迁移（人工复制粘贴，汗）到了印象笔记，不过印象笔记的免费版对同时登录的设备有限制，交了钱之后多设备随时登录，体验还是蛮好的。</p>
+<p>慢慢养成了在工作里把一些技术问题记录到印象笔记里面的习惯之后，有一种无法对别人诉说的幸福感，哈哈。</p>
+<p>但是，每次遇到复杂问题，尤其是那种搜索引擎也很难搞定的一类，自己找资料，做实验，读文档，花一番力气解决之后，每次都有想分享到网上的冲动，想着自己每次都是搜别人的解决方案，总想回馈点什么，每次都会因为不同的原因放弃，例如整理一番会觉得花时间，或者不知道该写在哪儿，云云。这种情况发生的多了，总还是有点内疚。</p>
+<p>从毕业开始，我接触的大多是和网络数据处理相关的工作内容，不可避免地要和大数据相关的系统打交道，概念上懂，但是没有实际操作经验，随着工作里涉及的大数据的产品与方案越来越多，我计划自己学习一下，于是决定从搭建Hadoop的集群环境开始。</p>
+<p>我感觉使用Ambari+hdp或Cloudera Manger+CDH版本的Hadoop来搭建环境，应该会让我失去不少细节的学习机会，于是决定自己手工尝试一下。选版本参考的是CDH版本的搭配，大部分的组件搭配都没问题，除了hive。用了三个节点，先安装Hadoop，然后是ZooKeeper，接着配置Namenode的HA，然后HBase，接着Hive，然后是Hiveserver2的HA。编程语言方面，我没怎么用过Java，这也是我一直没怎么主动学习Hadoop的主要原因之一。整个搭建过程大概经历了一周。</p>
+<p>在我的这个学习Hadoop集群搭建的过程中，遇到了一些问题，有些通过参考网络资料解决了，但是也有一部分，是通过阅读官方文档加上各种碎片资料，再加上各种猜测和尝试才搞定。</p>
+<p>之前的工作过程中也发生过类似的情况，遇见问题，网络上怎么也找不到现成的类似案例，最后自己看文档，翻源码，做各种实验尝试，最后解决。其实也是很想把一些经验分享给大家的，由于以上提到的，或者其他没提到的偶然因素，都未能实施。</p>
+<p>这次莫名其妙地有很大的想写下来的冲动，于是，就有了现在。</p>
+<h2 id="想写什么">想写什么</h2>
+<h4 id="阅读笔记">阅读笔记</h4>
+<p>阅读笔记，是我想写很久，却也拖了很久的东西。我所谓的阅读笔记，包括偶尔看到的博客、微博、自媒体等内容，也包括读书笔记。</p>
+<h4 id="技术内容整理">技术内容整理</h4>
+<p>我在工作过程中发现，有不少小同事仅仅对自己写的部分代码语法与逻辑熟悉，但是对网络基础，计算机基础等了解的比较有限，在解决工作中遇到的问题的时候，能用到手段就会大大收到限制。我计划把自己觉得能帮助到他们的内容整理一下，做个系列分享。</p>
+<h4 id="trouble-shooting-备忘">Trouble Shooting 备忘</h4>
+<p>记录自己遇到的一些问题的解决方案，希望也能够帮助到其他人。</p>
+<h4 id="创作">创作</h4>
+<p>也许和阅读笔记会有重叠。我希望自己能创作出一些有意义的内容。</p>
+<h4 id="好物分享">好物分享</h4>
+<p>运动，书籍，电影，文章，网络资源，软件工具，菜谱，玩具，觉得什么东西好，想分享给大家的。</p>
+<h4 id="待补充">待补充</h4>
+<p>待补充</p>
+<h2 id="写在最后">写在最后</h2>
+<p>人生是一个旅程，我从某一个时期开始认为，学会很好地操控文字，创作也好，记录也罢，能够留下一些什么，这个旅程会更有趣。</p>
+<p>突然怀疑，自己今天突然动手，是不是和听了“一代之治即一代之学”的说法有关系。</p>
+]]></content>
+    </entry>
+</feed>
